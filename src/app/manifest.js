@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name: 'Your Name Portfolio',
-    short_name: 'Portfolio',
-    description: 'Senior Software Engineer specializing in building high-performance web applications.',
+    name: 'Developer Chowk',
+    short_name: 'Developer Chowk',
+    description: 'Freelance Web Designer & Developer specializing in high-conversion local business websites.',
     start_url: '/',
     display: 'standalone',
     background_color: '#fff',

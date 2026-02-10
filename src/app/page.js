@@ -34,7 +34,7 @@ import { toast } from "sonner";
 const testimonials = [
   // ... existing testimonials
   {
-    quote: "My bakery sales jumped by 40% after the redesign. DesignNeighbor really listens and understands local community vibes.",
+    quote: "My bakery sales jumped by 40% after the redesign. Developer Chowk really listens and understands local community vibes.",
     name: "Sarah Johnson",
     role: "Founder, Sweet Corner",
     color: "text-[#ff7e47]",
@@ -119,7 +119,7 @@ const packages = [
   }
 ];
 
-export default function DesignNeighbor() {
+export default function DeveloperChowk() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -157,7 +157,7 @@ export default function DesignNeighbor() {
                 <div className="size-10 bg-[#ff7e47] rounded-xl flex items-center justify-center text-white shadow-lg">
                   <MdRocketLaunch className="text-2xl" />
                 </div>
-                <h2 className="text-xl font-bold tracking-tight">Menu</h2>
+                <h2 className="text-xl font-bold tracking-tight">Developer Chowk</h2>
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
@@ -185,7 +185,7 @@ export default function DesignNeighbor() {
             <div className="size-10 bg-gradient-to-br from-[#ff7e47] to-orange-400 rounded-2xl flex items-center justify-center text-white shadow-lg rotate-3">
               <MdRocketLaunch className="text-2xl" />
             </div>
-            <h2 className="text-xl font-bold tracking-tight bg-gradient-to-r from-[#ff7e47] to-orange-600 bg-clip-text text-transparent">DesignNeighbor</h2>
+            <h2 className="text-xl font-bold tracking-tight bg-gradient-to-r from-[#ff7e47] to-orange-600 bg-clip-text text-transparent">Developer Chowk</h2>
           </div>
           <nav className="hidden md:flex items-center gap-10">
             <a className="text-sm font-bold hover:text-[#ff7e47] transition-colors flex items-center gap-1" href="#portfolio"><MdGridView className="text-lg" />Projects</a>
@@ -509,7 +509,7 @@ export default function DesignNeighbor() {
             <div className="size-8 bg-[#ff7e47] rounded-xl flex items-center justify-center text-white shadow-lg">
               <MdRocketLaunch className="text-lg" />
             </div>
-            <h2 className="text-2xl font-bold tracking-tight">DesignNeighbor</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Developer Chowk</h2>
           </div>
           <p className="text-gray-400 font-bold">© {new Date().getFullYear()} Built with squishy magic in your neighborhood.</p>
           <div className="flex gap-4">

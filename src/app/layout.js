@@ -44,36 +44,36 @@ const fraunces = Fraunces({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://your-portfolio-domain.com"),
+  metadataBase: new URL("https://developerchowk.com"),
   title: {
-    default: "Freelance Web Designer | High-Conversion Local Business Websites",
-    template: "%s | DesignStudio",
+    default: "Developer Chowk | Freelance Web Designer & Developer",
+    template: "%s | Developer Chowk",
   },
-  description: "Helping local entrepreneurs dominate the digital landscape with high-conversion, modern web design and strategic SEO.",
-  keywords: ["Web Designer", "Local SEO", "Business Websites", "Freelance Designer", "Conversion Optimization"],
-  authors: [{ name: "DesignStudio" }],
-  creator: "DesignStudio",
+  description: "Helping businesses grow with high-conversion, modern web design and strategic SEO. Your friendly neighborhood developer at Developer Chowk.",
+  keywords: ["Web Designer", "Local SEO", "Business Websites", "Freelance Developer", "Conversion Optimization", "Developer Chowk"],
+  authors: [{ name: "Developer Chowk" }],
+  creator: "Developer Chowk",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-portfolio-domain.com",
-    siteName: "DesignStudio",
-    title: "Freelance Web Designer | High-Conversion Local Business Websites",
+    url: "https://developerchowk.com",
+    siteName: "Developer Chowk",
+    title: "Developer Chowk | Freelance Web Designer & Developer",
     description: "I build websites that grow local businesses with modern design and strategic SEO.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png", // Ensure this image exists or update it later
         width: 1200,
         height: 630,
-        alt: "DesignStudio Portfolio",
+        alt: "Developer Chowk Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Freelance Web Designer | High-Conversion Local Business Websites",
+    title: "Developer Chowk | Freelance Web Designer & Developer",
     description: "I build websites that grow local businesses with modern design and strategic SEO.",
-    creator: "@designstudio",
+    creator: "@developerchowk",
     images: ["/og-image.png"],
   },
   robots: {
@@ -88,10 +88,10 @@ export const metadata = {
     },
   },
   other: {
-    "google-site-verification": "your-verification-code",
+    "google-site-verification": "your-verification-code", // User might need to update this manually later
   },
   alternates: {
-    canonical: "https://your-portfolio-domain.com",
+    canonical: "https://developerchowk.com",
   },
 };
 

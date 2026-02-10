@@ -32,7 +32,7 @@ export default function SweetCorner() {
             <h2 className="text-2xl font-bold tracking-tight">The Sweet Corner</h2>
           </div>
           <nav className="hidden md:flex items-center gap-8 font-sans font-medium text-sm tracking-wide">
-            <Link className="hover:text-[#d97706] transition-colors" href="/">Home</Link>
+            <Link className="hover:text-[#d97706] transition-colors" href="/">Developer Chowk</Link>
             <a className="hover:text-[#d97706] transition-colors" href="#menu">Menu</a>
             <a className="hover:text-[#d97706] transition-colors" href="#about">Our Story</a>
             <a className="hover:text-[#d97706] transition-colors" href="#visit">Visit Us</a>

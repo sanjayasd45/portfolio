@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = "https://your-portfolio-domain.com";
+  const baseUrl = "https://developerchowk.com";
 
   // In a real app, you might fetch dynamic routes (e.g., blog posts) here
   // const posts = await getPosts();

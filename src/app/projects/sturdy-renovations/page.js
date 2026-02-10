@@ -295,7 +295,7 @@ export default function SturdyRenovations() {
           <div>
             <h4 className="font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-4 text-slate-400 text-sm">
-              <li><Link href="/" className="hover:text-[#1173d4]">Home Portfolio</Link></li>
+              <li><Link href="/" className="hover:text-[#1173d4]">Developer Chowk Portfolio</Link></li>
               <li><a className="hover:text-[#1173d4]" href="#">Our Process</a></li>
               <li><a className="hover:text-[#1173d4]" href="#">FAQs</a></li>
             </ul>

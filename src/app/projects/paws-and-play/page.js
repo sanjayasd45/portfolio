@@ -356,7 +356,7 @@ export default function PawsAndPlay() {
             <div>
               <h4 className="font-bold mb-6">Quick Links</h4>
               <ul className="space-y-4 text-slate-400">
-                <li><Link className="hover:text-[#4799eb]" href="/">Home Portfolio</Link></li>
+                <li><Link className="hover:text-[#4799eb]" href="/">Developer Chowk Portfolio</Link></li>
                 <li><a className="hover:text-[#4799eb]" href="#services">Services</a></li>
                 <li><a className="hover:text-[#4799eb]" href="#gallery">Gallery</a></li>
                 <li><a className="hover:text-[#4799eb]" href="#booking">Book Now</a></li>
