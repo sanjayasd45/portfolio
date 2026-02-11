@@ -1,15 +1,8 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Public_Sans, Plus_Jakarta_Sans, Quicksand, Fraunces } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
-
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "900"],
-});
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -17,36 +10,24 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const quicksand = Quicksand({
-  variable: "--font-quicksand",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
 export const metadata = {
   metadataBase: new URL("https://developerchowk.com"),
   title: {
-    default: "Developer Chowk | Freelance Web Designer & Developer",
+    default: "Developer Chowk | Enterprise MERN Stack Solutions",
     template: "%s | Developer Chowk",
   },
-  description: "Helping businesses grow with high-conversion, modern web design and strategic SEO. Your friendly neighborhood developer at Developer Chowk.",
+  description: "Enterprise-grade MERN stack development for ambitious brands. Scalable architecture, SOC2 compliance, and high-performance web applications.",
   keywords: [
-    "Web Designer", 
-    "Local SEO Expert", 
-    "Business Website Developer", 
-    "Freelance Web Developer", 
-    "Conversion Rate Optimization", 
-    "Developer Chowk", 
-    "E-commerce Web Design",
-    "Small Business Website",
-    "Custom Web Development",
-    "Next.js Developer"
+    "Enterprise Web Development",
+    "MERN Stack Architecture",
+    "SaaS Product Engineering",
+    "Scalable Web Apps",
+    "Developer Chowk",
+    "Next.js Enterprise Solutions",
+    "Custom Dashboard Development",
+    "API Microservices",
+    "Sanjay Developer",
+    "Full Stack Engineer India"
   ],
   authors: [{ name: "Developer Chowk" }],
   creator: "Developer Chowk",
@@ -55,23 +36,23 @@ export const metadata = {
     locale: "en_US",
     url: "https://developerchowk.com",
     siteName: "Developer Chowk",
-    title: "Developer Chowk | Freelance Web Designer & Developer",
-    description: "I build websites that grow local businesses with modern design and strategic SEO.",
+    title: "Developer Chowk | Enterprise MERN Stack Solutions",
+    description: "Robust, secure, and high-performance web applications built to scale.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image-enterprise.png",
         width: 1200,
         height: 630,
-        alt: "Developer Chowk Portfolio",
+        alt: "Developer Chowk Enterprise Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Developer Chowk | Freelance Web Designer & Developer",
-    description: "I build websites that grow local businesses with modern design and strategic SEO.",
+    title: "Developer Chowk | Enterprise MERN Stack Solutions",
+    description: "Robust, secure, and high-performance web applications built to scale.",
     creator: "@developerchowk",
-    images: ["/og-image.png"],
+    images: ["/og-image-enterprise.png"],
   },
   robots: {
     index: true,
@@ -94,22 +75,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <head>
       </head>
       <body
-        className={`${publicSans.variable} ${plusJakartaSans.variable} ${quicksand.variable} ${fraunces.variable} font-display antialiased`}
+        className={`${plusJakartaSans.variable} font-display antialiased bg-slate-950 text-slate-100`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <JsonLd />
-          {children}
-          <Toaster position="top-center" richColors />
-        </ThemeProvider>
+        <JsonLd />
+        {children}
+        <Toaster position="top-center" richColors />
         <GoogleAnalytics gaId="G-YWWSE3Z213" />
       </body>
     </html>
