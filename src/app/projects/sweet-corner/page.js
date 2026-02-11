@@ -12,6 +12,7 @@ import {
 } from "react-icons/md";
 import { FadeIn, StaggerContainer } from "@/components/ui/Motion";
 import Link from "next/link";
+import Image from "next/image";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 
@@ -91,8 +92,15 @@ export default function SweetCorner() {
             </div>
             <div className="order-1 md:order-2 relative">
               <FadeIn direction="left" delay={0.2}>
-                <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl rotate-3 border-8 border-white dark:border-[#451a03]">
-                  <div className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPV6sqG3Wf0gbrlf5yl1OqtiooVt-lDswdiTKT8HQ-OHZX_6RoP5uYlWJ7KY8oLyvtOjgoT4iGdQmrzESrR7LqZ2XVlsB5Mezf9iI47RDXafd4xJLVsiMqzRUytmYY1WoGZj1DTgQ5TWbqPdkr5jRg7Pk-50rIJB_IMQVAqdJhyAYjwVQ06TQXyHeP4iM7S0Q35nLUgmMR7MqTH9lJS8Hhrmzs-Pg_9CncIlqTdeiRSPXDyskIfvPsa6AqQ4K3_r_l7Ipm0RynQVY')" }}></div>
+                <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl rotate-3 border-8 border-white dark:border-[#451a03] relative">
+                  <Image 
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPV6sqG3Wf0gbrlf5yl1OqtiooVt-lDswdiTKT8HQ-OHZX_6RoP5uYlWJ7KY8oLyvtOjgoT4iGdQmrzESrR7LqZ2XVlsB5Mezf9iI47RDXafd4xJLVsiMqzRUytmYY1WoGZj1DTgQ5TWbqPdkr5jRg7Pk-50rIJB_IMQVAqdJhyAYjwVQ06TQXyHeP4iM7S0Q35nLUgmMR7MqTH9lJS8Hhrmzs-Pg_9CncIlqTdeiRSPXDyskIfvPsa6AqQ4K3_r_l7Ipm0RynQVY"
+                    alt="The Sweet Corner Bakery"
+                    fill
+                    priority
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </FadeIn>
               {/* Decorative Elements */}

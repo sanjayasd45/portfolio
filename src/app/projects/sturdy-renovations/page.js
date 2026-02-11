@@ -21,6 +21,7 @@ import {
   MdPhoneIphone
 } from "react-icons/md";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -66,10 +67,16 @@ export default function SturdyRenovations() {
       <main className="mx-auto max-w-[1200px] overflow-x-hidden px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="py-8 md:py-12">
-          <div className="flex min-h-[560px] flex-col gap-8 bg-cover bg-center bg-no-repeat rounded-2xl items-start justify-end p-8 md:p-16 relative overflow-hidden group shadow-2xl" 
-               style={{ 
-                 backgroundImage: `linear-gradient(to top, rgba(16, 25, 34, 0.9) 0%, rgba(16, 25, 34, 0.2) 60%, rgba(16, 25, 34, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC33hgALqg1qVREe7dRghMOLOWSxBj6pd4kIcz9DPXOTAOoQy1NaZ-ro6e_T87KL__J7KxqoFESNCFm4KsyLoC1yiAW3PbV2q4zpLEcwrf6XIMg_uPN7MVgg4ObQOd7Ylo9mHlH6VdC2PXm-TRjlz64QXsyUX_8cSe9l3K8DjQKF7mBZsUEvoElU4-FZXWQQQ7bBgZHyj3mfHtWJSkYH3x5DlpVwVzAgjInncsNSd2J1MCu3PC4v-JbzUbMWhVyBipVxleETVTnNfk")` 
-               }}>
+          <div className="flex min-h-[560px] flex-col gap-8 rounded-2xl items-start justify-end p-8 md:p-16 relative overflow-hidden group shadow-2xl">
+            <Image 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC33hgALqg1qVREe7dRghMOLOWSxBj6pd4kIcz9DPXOTAOoQy1NaZ-ro6e_T87KL__J7KxqoFESNCFm4KsyLoC1yiAW3PbV2q4zpLEcwrf6XIMg_uPN7MVgg4ObQOd7Ylo9mHlH6VdC2PXm-TRjlz64QXsyUX_8cSe9l3K8DjQKF7mBZsUEvoElU4-FZXWQQQ7bBgZHyj3mfHtWJSkYH3x5DlpVwVzAgjInncsNSd2J1MCu3PC4v-JbzUbMWhVyBipVxleETVTnNfk"
+              alt="Luxury home renovation"
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#101922]/90 via-[#101922]/20 to-transparent"></div>
             <div className="flex flex-col gap-4 max-w-2xl relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#f97316] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 <MdVerified className="text-sm" /> Licensed & Insured

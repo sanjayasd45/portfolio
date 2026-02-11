@@ -16,6 +16,7 @@ import {
   MdChevronRight
 } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer } from "@/components/ui/Motion";
 import { toast } from "sonner";
@@ -133,9 +134,16 @@ export default function PawsAndPlay() {
             <FadeIn direction="left" delay={0.3} className="w-full md:w-1/2 relative">
               <motion.div 
                 whileHover={{ scale: 1.02, rotate: 1 }}
-                className="aspect-[4/5] rounded-[4rem] bg-slate-200 shadow-2xl overflow-hidden border-[12px] border-white dark:border-slate-800" 
-                style={{ backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjK8ejHTTTFsyt05-4xVzp3SaREJfDnC-vJn_WJXc9Xeah1z6xESOLv9ulTYmJYTvfZs3ETk2XLQbKAOPGjxQmgBJKpeMIWyfbSjPEbam8WAEVbAOn-mzgrlyQ_y-BaRfGmsmy1MgvWwgZOSO_Smn60uHI2KZpZ_6f1Ukwf7hhnsK68KCbEwujJvtssGc10JTsxoo5WRXghNp0FpyVjFnulh1YS-iSfapQ5nAM0ZL7hArCFysvjJxnMmnBTithhG_JYYEvYJAQtew")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                className="aspect-[4/5] rounded-[4rem] bg-slate-200 shadow-2xl overflow-hidden border-[12px] border-white dark:border-slate-800 relative"
               >
+                <Image 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjK8ejHTTTFsyt05-4xVzp3SaREJfDnC-vJn_WJXc9Xeah1z6xESOLv9ulTYmJYTvfZs3ETk2XLQbKAOPGjxQmgBJKpeMIWyfbSjPEbam8WAEVbAOn-mzgrlyQ_y-BaRfGmsmy1MgvWwgZOSO_Smn60uHI2KZpZ_6f1Ukwf7hhnsK68KCbEwujJvtssGc10JTsxoo5WRXghNp0FpyVjFnulh1YS-iSfapQ5nAM0ZL7hArCFysvjJxnMmnBTithhG_JYYEvYJAQtew"
+                  alt="Paws & Play Grooming"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </motion.div>
             </FadeIn>
           </div>

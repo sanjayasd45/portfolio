@@ -27,6 +27,7 @@ import {
   MdCheck
 } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
@@ -235,7 +236,14 @@ export default function DeveloperChowk() {
           </div>
           <div className="relative w-full max-w-[600px] mx-auto aspect-square">
             <div className="relative z-20 w-full h-full rounded-[3rem] border-8 border-white dark:border-white/10 clay-card overflow-hidden rotate-2">
-              <div className="w-full h-full bg-cover bg-center scale-105" aria-label="Dynamic 3D clay character posing with a web layout" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGb1SJZpKCM7mLluh_LSfZ6vHS0g_sDYhu-T_QBvSKuFHRwhUm_2app5ywmP1HicfSivoOrPj0Im6zfyB6XGOE6d1eSmnKKx8rH6NqjHBiNzxdNC5lSzPk2hJsR-tjiyFEt41uy4Wce9yiWl-Sm7qmrAmxwsxBwdI-Wb2YDJcHnWselTeHqpvU-F8-E235BSToj6T7gocVb1skCBbTlC5ZUVqfpR9OVDNH_PzR8TM04e4jSnn7oABfVohvrtAfcoHKDBD6jiBHDuQ')" }}></div>
+              <Image 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGb1SJZpKCM7mLluh_LSfZ6vHS0g_sDYhu-T_QBvSKuFHRwhUm_2app5ywmP1HicfSivoOrPj0Im6zfyB6XGOE6d1eSmnKKx8rH6NqjHBiNzxdNC5lSzPk2hJsR-tjiyFEt41uy4Wce9yiWl-Sm7qmrAmxwsxBwdI-Wb2YDJcHnWselTeHqpvU-F8-E235BSToj6T7gocVb1skCBbTlC5ZUVqfpR9OVDNH_PzR8TM04e4jSnn7oABfVohvrtAfcoHKDBD6jiBHDuQ"
+                alt="Dynamic 3D clay character posing with a web layout"
+                fill
+                priority
+                className="object-cover scale-105"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
             </div>
             <motion.div 
               animate={{ y: [0, -10, 0] }}
@@ -289,7 +297,13 @@ export default function DeveloperChowk() {
             {/* Project 1 - Sturdy Renovations */}
             <div className="group clay-card rounded-[2.5rem] p-5 bg-white dark:bg-[#1a1625] hover:-translate-y-3 transition-all duration-500">
               <div className="w-full aspect-[4/3] rounded-[1.8rem] overflow-hidden mb-8 relative">
-                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC33hgALqg1qVREe7dRghMOLOWSxBj6pd4kIcz9DPXOTAOoQy1NaZ-ro6e_T87KL__J7KxqoFESNCFm4KsyLoC1yiAW3PbV2q4zpLEcwrf6XIMg_uPN7MVgg4ObQOd7Ylo9mHlH6VdC2PXm-TRjlz64QXsyUX_8cSe9l3K8DjQKF7mBZsUEvoElU4-FZXWQQQ7bBgZHyj3mfHtWJSkYH3x5DlpVwVzAgjInncsNSd2J1MCu3PC4v-JbzUbMWhVyBipVxleETVTnNfk')" }}></div>
+                <Image 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC33hgALqg1qVREe7dRghMOLOWSxBj6pd4kIcz9DPXOTAOoQy1NaZ-ro6e_T87KL__J7KxqoFESNCFm4KsyLoC1yiAW3PbV2q4zpLEcwrf6XIMg_uPN7MVgg4ObQOd7Ylo9mHlH6VdC2PXm-TRjlz64QXsyUX_8cSe9l3K8DjQKF7mBZsUEvoElU4-FZXWQQQ7bBgZHyj3mfHtWJSkYH3x5DlpVwVzAgjInncsNSd2J1MCu3PC4v-JbzUbMWhVyBipVxleETVTnNfk"
+                  alt="Sturdy Renovations project"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 <div className="absolute top-5 left-5 bg-white/95 px-4 py-2 rounded-full text-xs font-bold text-[#ff7e47] shadow-lg uppercase tracking-wider">Construction</div>
               </div>
               <div className="px-3 pb-4 space-y-4">
@@ -306,7 +320,13 @@ export default function DeveloperChowk() {
             {/* Project 2 - Paws & Play */}
             <div className="group clay-card rounded-[2.5rem] p-5 bg-white dark:bg-[#1a1625] hover:-translate-y-3 transition-all duration-500">
               <div className="w-full aspect-[4/3] rounded-[1.8rem] overflow-hidden mb-8 relative">
-                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjK8ejHTTTFsyt05-4xVzp3SaREJfDnC-vJn_WJXc9Xeah1z6xESOLv9ulTYmJYTvfZs3ETk2XLQbKAOPGjxQmgBJKpeMIWyfbSjPEbam8WAEVbAOn-mzgrlyQ_y-BaRfGmsmy1MgvWwgZOSO_Smn60uHI2KZpZ_6f1Ukwf7hhnsK68KCbEwujJvtssGc10JTsxoo5WRXghNp0FpyVjFnulh1YS-iSfapQ5nAM0ZL7hArCFysvjJxnMmnBTithhG_JYYEvYJAQtew')" }}></div>
+                <Image 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjK8ejHTTTFsyt05-4xVzp3SaREJfDnC-vJn_WJXc9Xeah1z6xESOLv9ulTYmJYTvfZs3ETk2XLQbKAOPGjxQmgBJKpeMIWyfbSjPEbam8WAEVbAOn-mzgrlyQ_y-BaRfGmsmy1MgvWwgZOSO_Smn60uHI2KZpZ_6f1Ukwf7hhnsK68KCbEwujJvtssGc10JTsxoo5WRXghNp0FpyVjFnulh1YS-iSfapQ5nAM0ZL7hArCFysvjJxnMmnBTithhG_JYYEvYJAQtew"
+                  alt="Paws & Play project"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 <div className="absolute top-5 left-5 bg-white/95 px-4 py-2 rounded-full text-xs font-bold text-[#ff7e47] shadow-lg uppercase tracking-wider">Pet Grooming</div>
               </div>
               <div className="px-3 pb-4 space-y-4">
@@ -323,7 +343,13 @@ export default function DeveloperChowk() {
             {/* Project 3 - The Sweet Corner */}
             <div className="group clay-card rounded-[2.5rem] p-5 bg-white dark:bg-[#1a1625] hover:-translate-y-3 transition-all duration-500">
               <div className="w-full aspect-[4/3] rounded-[1.8rem] overflow-hidden mb-8 relative">
-                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPV6sqG3Wf0gbrlf5yl1OqtiooVt-lDswdiTKT8HQ-OHZX_6RoP5uYlWJ7KY8oLyvtOjgoT4iGdQmrzESrR7LqZ2XVlsB5Mezf9iI47RDXafd4xJLVsiMqzRUytmYY1WoGZj1DTgQ5TWbqPdkr5jRg7Pk-50rIJB_IMQVAqdJhyAYjwVQ06TQXyHeP4iM7S0Q35nLUgmMR7MqTH9lJS8Hhrmzs-Pg_9CncIlqTdeiRSPXDyskIfvPsa6AqQ4K3_r_l7Ipm0RynQVY')" }}></div>
+                <Image 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPV6sqG3Wf0gbrlf5yl1OqtiooVt-lDswdiTKT8HQ-OHZX_6RoP5uYlWJ7KY8oLyvtOjgoT4iGdQmrzESrR7LqZ2XVlsB5Mezf9iI47RDXafd4xJLVsiMqzRUytmYY1WoGZj1DTgQ5TWbqPdkr5jRg7Pk-50rIJB_IMQVAqdJhyAYjwVQ06TQXyHeP4iM7S0Q35nLUgmMR7MqTH9lJS8Hhrmzs-Pg_9CncIlqTdeiRSPXDyskIfvPsa6AqQ4K3_r_l7Ipm0RynQVY"
+                  alt="The Sweet Corner project"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 <div className="absolute top-5 left-5 bg-white/95 px-4 py-2 rounded-full text-xs font-bold text-[#ff7e47] shadow-lg uppercase tracking-wider">Artisan Bakery</div>
               </div>
               <div className="px-3 pb-4 space-y-4">
@@ -469,7 +495,15 @@ export default function DeveloperChowk() {
                       <MdFormatQuote className={`text-6xl opacity-20 absolute top-4 right-6 font-bold ${testimonial.color}`} />
                       <p className="text-xl font-bold leading-relaxed mb-8 italic min-h-[120px] flex items-center">&quot;{testimonial.quote}&quot;</p>
                       <div className="flex items-center gap-5">
-                        <div className={`size-16 rounded-2xl shadow-lg bg-cover bg-center border-2 border-white ${testimonial.bgColor}`} style={{ backgroundImage: `url('${testimonial.img}')` }}></div>
+                        <div className={`relative size-16 rounded-2xl shadow-lg overflow-hidden border-2 border-white ${testimonial.bgColor}`}>
+                          <Image 
+                            src={testimonial.img}
+                            alt={testimonial.name}
+                            fill
+                            className="object-cover"
+                            sizes="64px"
+                          />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">{testimonial.name}</p>
                           <p className={`text-sm font-bold uppercase tracking-widest ${testimonial.color}`}>{testimonial.role}</p>
