@@ -28,9 +28,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
+import dynamic from "next/dynamic";
 
-import InteractiveTechBg from "@/components/InteractiveTechBg";
-import SectionGridBg from "@/components/SectionGridBg";
+const InteractiveTechBg = dynamic(() => import("@/components/InteractiveTechBg"), { ssr: false });
+const SectionGridBg = dynamic(() => import("@/components/SectionGridBg"), { ssr: false });
 
 export default function EnterprisePortfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -354,6 +355,7 @@ export default function EnterprisePortfolio() {
                       src={project.img} 
                       alt={project.title} 
                       fill
+                      priority={idx === 0}
                       className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                       sizes="(max-width: 1024px) 100vw, 33vw"
                     />

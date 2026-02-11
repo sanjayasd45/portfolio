@@ -111,12 +111,18 @@ export default function InteractiveTechBg() {
       }
     };
 
-    init();
-    animate();
+    const startAnimation = () => {
+      init();
+      animate();
+    };
+
+    // Use a small delay to ensure main content renders first
+    const timeoutId = setTimeout(startAnimation, 100);
 
     return () => {
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animationFrameId);
+      clearTimeout(timeoutId);
     };
   }, []);
 
