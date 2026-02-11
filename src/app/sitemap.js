@@ -1,20 +1,30 @@
 export default async function sitemap() {
   const baseUrl = "https://developerchowk.com";
 
-  // In a real app, you might fetch dynamic routes (e.g., blog posts) here
-  // const posts = await getPosts();
-  // const postUrls = posts.map((post) => ({
-  //   url: `${baseUrl}/blog/${post.slug}`,
-  //   lastModified: post.updatedAt,
-  // }));
-
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
     },
-    // ...postUrls,
+    {
+      url: `${baseUrl}/projects/paws-and-play`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects/sturdy-renovations`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects/sweet-corner`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

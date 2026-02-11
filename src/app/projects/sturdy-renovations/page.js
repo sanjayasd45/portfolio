@@ -161,7 +161,7 @@ export default function SturdyRenovations() {
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#1173d4] font-bold uppercase tracking-widest text-sm">What We Do</span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mt-2">Built to Last: Our Expertise</h2>
-            <p className="mt-4 text-slate-600 dark:text-slate-400">From concept to completion, we handle every detail of your home's transformation with surgical precision.</p>
+            <p className="mt-4 text-slate-600 dark:text-slate-400">From concept to completion, we handle every detail of your home&apos;s transformation with surgical precision.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -206,15 +206,15 @@ export default function SturdyRenovations() {
             ].map((review, i) => (
               <div key={i} className="flex flex-col gap-6">
                 <div className="relative rounded-2xl overflow-hidden h-48 group shadow-lg">
-                  <img src={review.bg} alt="Finished project" className="h-full w-full object-cover" />
+                  <Image src={review.bg} alt="Finished project" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
                 <blockquote className="text-slate-700 dark:text-slate-300 italic leading-relaxed">
                   &quot;{review.quote}&quot;
                 </blockquote>
                 <div className="flex items-center gap-4">
-                  <div className="size-12 rounded-full bg-slate-200">
-                    <img src={review.img} alt={review.name} className="h-full w-full rounded-full object-cover" />
+                  <div className="size-12 rounded-full bg-slate-200 overflow-hidden relative">
+                    <Image src={review.img} alt={review.name} fill className="object-cover" sizes="48px" />
                   </div>
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white text-sm">{review.name}</p>

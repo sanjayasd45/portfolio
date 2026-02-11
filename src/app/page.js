@@ -163,6 +163,7 @@ export default function DeveloperChowk() {
               <button 
                 onClick={() => setIsMenuOpen(false)}
                 className="size-10 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center"
+                aria-label="Close menu"
               >
                 <MdClose className="text-2xl" />
               </button>
@@ -201,6 +202,7 @@ export default function DeveloperChowk() {
             <button 
               onClick={() => setIsMenuOpen(true)}
               className="md:hidden size-10 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center"
+              aria-label="Open menu"
             >
               <MdMenu className="text-2xl" />
             </button>
