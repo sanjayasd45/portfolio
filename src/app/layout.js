@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Public_Sans, Plus_Jakarta_Sans, Quicksand, Fraunces } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
@@ -109,6 +110,7 @@ export default function RootLayout({ children }) {
           {children}
           <Toaster position="top-center" richColors />
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-YWWSE3Z213" />
       </body>
     </html>
   );
