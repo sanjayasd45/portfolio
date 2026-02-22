@@ -47,3 +47,25 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes beamX {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+
+@keyframes beamY {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.2; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+
+.animate-beam-x {
+  animation: beamX 12s linear infinite;
+  animation-delay: 2s;
+}
+
+.animate-beam-y {
+  animation: beamY 18s linear infinite;
+  animation-delay: 5s;
+}

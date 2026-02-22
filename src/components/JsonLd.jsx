@@ -4,30 +4,33 @@ export default function JsonLd() {
     "@type": "ProfessionalService",
     "name": "Developer Chowk",
     "url": "https://developerchowk.com",
-    "logo": "https://developerchowk.com/logo.png",
+    "logo": "https://developerchowk.com/logo1.png",
     "image": "https://developerchowk.com/og-image-enterprise.png",
-    "description": "Enterprise-grade MERN stack solutions for ambitious startups and established corporations. Architecting scalable, secure, and performant digital ecosystems.",
+    "description": "Developer Chowk provides expert MERN stack web development, custom business software, and booking systems in Lucknow. Specialized in scalable, secure, and high-performance digital solutions.",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Lucknow",
       "addressLocality": "Lucknow",
       "addressRegion": "Uttar Pradesh",
       "addressCountry": "IN",
       "postalCode": "226010"
     },
-    "priceRange": "$5,000 - $50,000+",
-    "openingHours": "Mo-Fr 10:00-19:00",
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 09:00-21:00",
     "sameAs": [
-      "https://github.com/developerchowk",
-      "https://linkedin.com/in/developerchowk"
+      "https://github.com/sanjayasd45",
+      "https://www.linkedin.com/company/112421408",
+      "https://www.instagram.com/thedeveloperchowk"
     ],
     "knowsAbout": [
-      "Enterprise Software Development",
-      "MERN Stack Architecture",
-      "SaaS Engineering",
-      "API Design",
-      "Next.js",
-      "Node.js",
-      "Security Auditing"
+      "Web Development Lucknow",
+      "MERN Stack Development",
+      "Custom Software Engineering",
+      "Booking System Development",
+      "SaaS Product Design",
+      "API & Microservices Architecture",
+      "Next.js SEO Optimization",
+      "E-commerce Solutions"
     ]
   };
 
