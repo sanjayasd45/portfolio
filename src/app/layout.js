@@ -67,13 +67,13 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/logo1.png", sizes: "48x48", type: "image/png" },
       { url: "/logo1.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-icon.svg", type: "image/svg+xml" },
       { url: "/logo1.png", sizes: "180x180", type: "image/png" },
     ],
+    shortcut: "/logo1.png",
   },
   alternates: {
     canonical: "https://developerchowk.com",
