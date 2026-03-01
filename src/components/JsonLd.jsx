@@ -5,15 +5,24 @@ export default function JsonLd() {
     "name": "Developer Chowk",
     "url": "https://developerchowk.com",
     "logo": "https://developerchowk.com/logo1.png",
-    "image": "https://developerchowk.com/og-image-enterprise.png",
-    "description": "Developer Chowk provides expert MERN stack web development, custom business software, and booking systems in Lucknow. Specialized in scalable, secure, and high-performance digital solutions.",
+    "image": "https://developerchowk.com/logo1.png",
+    "description": "Developer Chowk builds expert MERN stack web applications, custom business software, SaaS platforms, and booking systems for startups and businesses across India.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Lucknow",
-      "addressLocality": "Lucknow",
-      "addressRegion": "Uttar Pradesh",
-      "addressCountry": "IN",
-      "postalCode": "226010"
+      "addressLocality": "India",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "sanjay@developerchowk.com",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Sanjay",
+      "url": "https://github.com/sanjayasd45",
+      "jobTitle": "Full-Stack Web Developer"
     },
     "priceRange": "$$",
     "openingHours": "Mo-Sa 09:00-21:00",
@@ -31,7 +40,11 @@ export default function JsonLd() {
       "API & Microservices Architecture",
       "Next.js SEO Optimization",
       "E-commerce Solutions"
-    ]
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    }
   };
 
   return (

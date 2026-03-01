@@ -1,6 +1,6 @@
 "use client";
 
-import { MdMail, MdLocationOn, MdSend } from "react-icons/md";
+import { MdMail, MdLocationOn, MdSend, MdWhatsapp } from "react-icons/md";
 import { toast } from "sonner";
 import { useState } from "react";
 
@@ -22,21 +22,19 @@ export default function Contact() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
       const result = await response.json();
 
       if (response.ok) {
-        toast.success("Inquiry sent successfully! We typically respond within 24 hours.");
+        toast.success("Message sent! I'll respond within 24 hours.");
         e.target.reset();
       } else {
-        toast.error(result.error || "Failed to send inquiry. Please try again.");
+        toast.error(result.error || "Failed to send. Please try again.");
       }
-    } catch (error) {
+    } catch {
       toast.error("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -49,92 +47,131 @@ export default function Contact() {
         <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]"></div>
         <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+          {/* Left — Context & trust */}
           <div className="flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-blue-500 text-xs font-bold uppercase tracking-wider mb-6 w-fit">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              Accepting New Projects
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-amber-400 text-xs font-bold uppercase tracking-wider mb-6 w-fit">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              2 Slots Remaining — March 2026
             </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
-              Ready to grow your <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">business?</span>
+
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
+              Let&apos;s Build Something<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">That Grows Your Business.</span>
             </h2>
-            <p className="text-lg text-slate-400 mb-12 leading-relaxed font-light">
-              Discuss your project directly with me. Get a technical consultation and a roadmap for your next digital product.
+
+            <p className="text-lg text-slate-400 mb-10 leading-relaxed font-light">
+              Tell me about your project. I&apos;ll review it and get back to you with a free consultation and a rough quote — no commitment needed.
             </p>
-            <div className="space-y-8">
+
+            <div className="space-y-6">
               <div className="flex group">
-                <div className="flex-shrink-0 mr-6">
-                  <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-blue-500 group-hover:border-blue-500/50 group-hover:bg-blue-500/5 transition-all duration-300 shadow-lg">
-                    <MdMail className="text-2xl" />
+                <div className="flex-shrink-0 mr-5">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-blue-500 group-hover:border-blue-500/40 transition-all duration-300">
+                    <MdMail className="text-xl" aria-hidden="true" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-1">Email Us</h4>
-                  <a className="text-slate-400 hover:text-blue-500 transition-colors" href="mailto:sanjay@developerchowk.com">sanjay@developerchowk.com</a>
+                  <h4 className="text-base font-bold text-white mb-0.5">Email</h4>
+                  <a className="text-slate-400 hover:text-blue-400 transition-colors text-sm" href="mailto:sanjay@developerchowk.com">
+                    sanjay@developerchowk.com
+                  </a>
                 </div>
               </div>
+
               <div className="flex group">
-                <div className="flex-shrink-0 mr-6">
-                  <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-blue-500 group-hover:border-blue-500/50 group-hover:bg-blue-500/5 transition-all duration-300 shadow-lg">
-                    <MdLocationOn className="text-2xl" />
+                <div className="flex-shrink-0 mr-5">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-green-500 group-hover:border-green-500/40 transition-all duration-300">
+                    <MdWhatsapp className="text-xl" aria-hidden="true" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-1">HQ Location</h4>
-                  <p className="text-slate-400">Lucknow, India</p>
+                  <h4 className="text-base font-bold text-white mb-0.5">WhatsApp</h4>
+                  <p className="text-slate-400 text-sm">Reply within 1 hour</p>
+                </div>
+              </div>
+
+              <div className="flex group">
+                <div className="flex-shrink-0 mr-5">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-blue-500 group-hover:border-blue-500/40 transition-all duration-300">
+                    <MdLocationOn className="text-xl" aria-hidden="true" />
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-base font-bold text-white mb-0.5">Location</h4>
+                  <p className="text-slate-400 text-sm">India · Remote-Friendly · GMT+5:30</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
+          {/* Right — Form */}
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl blur opacity-30"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl blur opacity-25"></div>
             <div className="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl">
-              <form onSubmit={handleInquirySubmit} className="space-y-4 md:space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-300" htmlFor="name">Name</label>
-                    <input className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-inner" id="name" name="name" placeholder="John Doe" type="text" required />
+              <h3 className="text-lg font-bold text-white mb-6">Get Your Free Quote</h3>
+              <form onSubmit={handleInquirySubmit} className="space-y-4 md:space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider" htmlFor="name">Your Name</label>
+                    <input
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm"
+                      id="name" name="name" placeholder="John Doe" type="text" required
+                    />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-300" htmlFor="email">Email</label>
-                    <input className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-inner" id="email" name="email" placeholder="john@company.com" type="email" required />
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider" htmlFor="email">Email Address</label>
+                    <input
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm"
+                      id="email" name="email" placeholder="john@company.com" type="email" required
+                    />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-slate-300" htmlFor="project-type">Project Type</label>
-                  <select 
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-inner cursor-pointer" 
-                    id="project-type" 
-                    name="project-type"
-                    required
-                    defaultValue=""
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider" htmlFor="project-type">What Do You Need?</label>
+                  <select
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer text-sm"
+                    id="project-type" name="project-type" required defaultValue=""
                   >
-                    <option value="" disabled>Select Engagement Model</option>
-                    <option value="saas">SaaS Platform Development</option>
-                    <option value="webapp">Enterprise Web Application</option>
-                    <option value="api">API & Microservices</option>
-                    <option value="consulting">Technical Consultancy</option>
+                    <option value="" disabled>Select your project type</option>
+                    <option value="website">New Business Website</option>
+                    <option value="booking">Booking / Scheduling System</option>
+                    <option value="saas">SaaS / Web Application</option>
+                    <option value="dashboard">Dashboard / Admin Panel</option>
+                    <option value="seo">Speed & SEO Optimization</option>
+                    <option value="consulting">Technical Consultation</option>
                   </select>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-slate-300" htmlFor="message">Message</label>
-                  <textarea className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-inner resize-none" id="message" name="message" placeholder="Describe your project requirements, timeline, and goals..." rows="4" required></textarea>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider" htmlFor="message">Tell Me About Your Project</label>
+                  <textarea
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none text-sm"
+                    id="message" name="message"
+                    placeholder="What problem are you trying to solve? What's your timeline and budget? The more detail, the better I can help."
+                    rows="4" required
+                  ></textarea>
                 </div>
-                <button 
-                  className="w-full inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 group mt-2 disabled:opacity-50 disabled:cursor-not-allowed" 
+
+                <button
+                  className="w-full inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-blue-500 hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 group disabled:opacity-50 disabled:cursor-not-allowed"
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Inquiry"}
-                  <MdSend className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? "Sending..." : "Get My Free Quote"}
+                  <MdSend className="ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </button>
-                <p className="text-xs text-center text-slate-500 mt-2">
-                  By sending this form, you agree to our privacy policy. We typically respond within 24 hours.
-                </p>
+
+                {/* Trust copy */}
+                <div className="pt-2 text-center space-y-1">
+                  <p className="text-xs text-slate-500">
+                    🔒 No commitment required &nbsp;·&nbsp; Reply within 1 hour &nbsp;·&nbsp; Free consultation
+                  </p>
+                </div>
               </form>
             </div>
           </div>

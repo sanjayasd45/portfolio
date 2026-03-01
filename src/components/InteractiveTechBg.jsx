@@ -1,109 +1,100 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-
-class Particle {
-  constructor(canvas) {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 3 + 1.5;
-    this.baseX = this.x;
-    this.baseY = this.y;
-    this.density = (Math.random() * 30) + 1;
-    this.color = 'rgba(59, 130, 246, 0.7)';
-  }
-
-  draw(ctx) {
-    ctx.fillStyle = this.color;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.closePath();
-    ctx.fill();
-  }
-
-  update(mouse, canvas) {
-    let dx = mouse.x - this.x;
-    let dy = mouse.y - this.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
-    let forceDirectionX = dx / distance;
-    let forceDirectionY = dy / distance;
-    let maxDistance = 200;
-    let force = (maxDistance - distance) / maxDistance;
-    let directionX = forceDirectionX * force * this.density;
-    let directionY = forceDirectionY * force * this.density;
-
-    if (distance < maxDistance) {
-      this.x -= directionX;
-      this.y -= directionY;
-    } else {
-      if (this.x !== this.baseX) {
-        let dx = this.x - this.baseX;
-        this.x -= dx / 15;
-      }
-      if (this.y !== this.baseY) {
-        let dy = this.y - this.baseY;
-        this.y -= dy / 15;
-      }
-    }
-  }
-}
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function InteractiveTechBg() {
   const canvasRef = useRef(null);
+  // Don't render on mobile — canvas animation is expensive on slow CPUs
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    // Only run on desktop (lg breakpoint = 1024px)
+    if (window.innerWidth < 1024) return;
+    setShow(true);
+  }, []);
+
+  useEffect(() => {
+    if (!show) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     let animationFrameId;
     let particles = [];
-    let mouse = { x: null, y: null };
+    let mouse = { x: -9999, y: -9999 };
+    let lastMouseMove = 0;
 
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      init();
     };
 
     const handleMouseMove = (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
+      const now = performance.now();
+      if (now - lastMouseMove < 16) return;
+      lastMouseMove = now;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     };
 
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', handleMouseMove);
+    const handleMouseLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
 
-    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
 
     const init = () => {
       particles = [];
-      const numberOfParticles = (canvas.width * canvas.height) / 7000;
-      for (let i = 0; i < numberOfParticles; i++) {
-        particles.push(new Particle(canvas));
+      // Cap at 60 on desktop for smooth 60fps
+      const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 60);
+      for (let i = 0; i < count; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        particles.push({ x, y, baseX: x, baseY: y, size: Math.random() * 2.5 + 1, density: Math.random() * 25 + 1 });
       }
     };
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].draw(ctx);
-        particles[i].update(mouse, canvas);
+      const len = particles.length;
+      ctx.fillStyle = 'rgba(59, 130, 246, 0.7)';
+
+      for (let i = 0; i < len; i++) {
+        const p = particles[i];
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const distSq = dx * dx + dy * dy;
+        const maxDist = 180;
+
+        if (distSq < maxDist * maxDist) {
+          const distance = Math.sqrt(distSq);
+          const force = (maxDist - distance) / maxDist;
+          p.x -= (dx / distance) * force * p.density;
+          p.y -= (dy / distance) * force * p.density;
+        } else {
+          if (p.x !== p.baseX) p.x -= (p.x - p.baseX) / 15;
+          if (p.y !== p.baseY) p.y -= (p.y - p.baseY) / 15;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
       }
-      connect();
-      animationFrameId = requestAnimationFrame(animate);
-    };
 
-    const connect = () => {
-      for (let a = 0; a < particles.length; a++) {
-        for (let b = a; b < particles.length; b++) {
-          let dx = particles[a].x - particles[b].x;
-          let dy = particles[a].y - particles[b].y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 180) {
-            let opacity = 1 - (distance / 180);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${opacity * 0.4})`;
-            ctx.lineWidth = 1.5;
+      for (let a = 0; a < len; a++) {
+        for (let b = a + 1; b < len; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const distSq = dx * dx + dy * dy;
+          if (distSq < 32400) {
+            const opacity = (1 - Math.sqrt(distSq) / 180) * 0.4;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${opacity})`;
+            ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
             ctx.lineTo(particles[b].x, particles[b].y);
@@ -111,27 +102,29 @@ export default function InteractiveTechBg() {
           }
         }
       }
+
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    const startAnimation = () => {
-      init();
-      animate();
-    };
-
-    const timeoutId = setTimeout(startAnimation, 100);
+    resize();
+    const timeoutId = setTimeout(() => animate(), 300);
 
     return () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [show]);
+
+  if (!show) return null;
 
   return (
-    <canvas 
-      ref={canvasRef} 
+    <canvas
+      ref={canvasRef}
       className="absolute inset-0 z-0 pointer-events-none opacity-80"
+      aria-hidden="true"
     />
   );
 }

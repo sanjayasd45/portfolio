@@ -8,24 +8,24 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-10">
           <div className="space-y-4 md:space-y-5">
             <div className="flex items-center gap-3">
-              <Image 
-                src="/logo1.png" 
-                alt="Developer Chowk Logo" 
-                width={40} 
-                height={40} 
+              <Image
+                src="/logo1.png"
+                alt="Developer Chowk Logo"
+                width={40}
+                height={40}
                 className="rounded-lg shadow-lg"
               />
               <span className="font-bold text-xl tracking-tight text-white leading-none">Developer Chowk</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Custom MERN stack solutions for ambitious startups and local businesses. I build scalable, secure, and performant digital ecosystems.
+              I build fast, scalable, and SEO-friendly websites, SaaS platforms, and booking systems for startups and businesses across India.
             </p>
             <div className="flex items-center gap-4 text-slate-500">
               <MdLock className="text-sm" />
               <span className="text-[10px] font-mono uppercase tracking-widest">Trust Verified Vendor</span>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-4 md:mb-6">Solutions</h4>
             <ul className="space-y-2 md:space-y-3">
@@ -39,7 +39,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-4 md:mb-6">Resources</h4>
             <ul className="space-y-2 md:space-y-3">
@@ -53,15 +53,14 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-4 md:mb-6">Headquarters</h4>
             <div className="space-y-3 md:space-y-4">
               <div className="flex items-start gap-4">
                 <MdLocationOn className="text-blue-500 text-xl mt-1" />
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Lucknow, Uttar Pradesh<br/>
-                  India — 226010
+                  India<br />Remote-Friendly · GMT+5:30
                 </p>
               </div>
               <div className="flex items-center gap-4">
@@ -71,7 +70,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <p className="text-slate-500 text-xs font-medium">
             © {new Date().getFullYear()} Developer Chowk. All rights reserved. Managed by Sanjay.
