@@ -23,15 +23,6 @@ export default function Hero() {
           {/* ── Left column — lead-gen copy ── */}
           <div className="text-left animate-hero-in">
 
-            {/* Scarcity badge */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest mb-8">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-              </span>
-              Only 2 Project Slots Left — March 2026
-            </div>
-
             {/* Problem-led headline */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
               Your Business Deserves a Website That{" "}

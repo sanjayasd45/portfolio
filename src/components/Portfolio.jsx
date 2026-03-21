@@ -21,13 +21,12 @@ const projects = [
     tech: ["React", "Stripe", "Express"]
   },
   {
-    title: "Infrastructure SSR",
-    category: "Cloud",
-    desc: "Custom SSR portfolio on Oracle Linux with Nginx, PM2, and Cloudflare Zero-Trust.",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2074&auto=format&fit=crop",
-    repo: "https://github.com/sanjayasd45/portfolio",
-    link: "#",
-    tech: ["Next.js", "Nginx", "Linux"]
+    title: "GymElite Enterprise",
+    category: "Fitness SaaS",
+    desc: "Comprehensive gym management system with member tracking, payments, and analytics.",
+    img: "https://res.cloudinary.com/expensetracker45/image/upload/v1774075219/gym/Screenshot_2026-03-21_120907_bkxz0v.png",
+    link: "https://gymelite.in",
+    tech: ["Next.js", "Cloudflare", "Linux"]
   }
 ];
 
