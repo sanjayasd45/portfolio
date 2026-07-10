@@ -16,21 +16,21 @@ export default function Navbar() {
             <Image
               src="/logo1.png"
               alt="Developer Chowk Logo"
-              width={48}
-              height={48}
-              className="rounded-xl shadow-lg shadow-blue-500/10"
+              width={110}
+              height={54}
+              className="object-contain"
               priority
-              quality={85}
+              quality={90}
             />
             <div className="flex flex-col">
               <span className="font-bold text-xl tracking-tight text-white leading-none">Developer Chowk</span>
-              <span className="text-xs text-slate-400 font-medium tracking-widest uppercase mt-0.5">Full-Stack Developer</span>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-10">
             <a className="text-sm font-semibold text-slate-300 hover:text-white transition-colors uppercase tracking-wide" href="#process">Process</a>
             <a className="text-sm font-semibold text-slate-300 hover:text-white transition-colors uppercase tracking-wide" href="#services">Services</a>
             <a className="text-sm font-semibold text-slate-300 hover:text-white transition-colors uppercase tracking-wide" href="#portfolio">Work</a>
+            <Link className="text-sm font-semibold text-slate-300 hover:text-white transition-colors uppercase tracking-wide" href="/blog">Blog</Link>
             <Link className="inline-flex items-center justify-center px-6 py-2.5 border border-white/10 text-sm font-bold rounded-lg text-white bg-white/5 hover:bg-blue-500 transition-all backdrop-blur-sm" href="#contact">
               Hire For Project
             </Link>
@@ -58,6 +58,7 @@ export default function Navbar() {
           <a onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold text-slate-300 hover:text-white transition-colors" href="#process">Process</a>
           <a onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold text-slate-300 hover:text-white transition-colors" href="#services">Services</a>
           <a onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold text-slate-300 hover:text-white transition-colors" href="#portfolio">Work</a>
+          <Link onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold text-slate-300 hover:text-white transition-colors" href="/blog">Blog</Link>
           <Link onClick={() => setIsMenuOpen(false)} className="block w-full py-4 text-center bg-blue-500 rounded-xl font-bold text-white hover:bg-blue-600 transition-colors" href="#contact">Hire For Project</Link>
         </div>
       </div>

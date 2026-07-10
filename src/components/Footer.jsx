@@ -11,9 +11,9 @@ export default function Footer() {
               <Image
                 src="/logo1.png"
                 alt="Developer Chowk Logo"
-                width={40}
+                width={82}
                 height={40}
-                className="rounded-lg shadow-lg"
+                className="object-contain"
               />
               <span className="font-bold text-xl tracking-tight text-white leading-none">Developer Chowk</span>
             </div>
@@ -43,10 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-4 md:mb-6">Resources</h4>
             <ul className="space-y-2 md:space-y-3">
-              {["Methodology", "Case Studies", "GymElite Enterprise", "Privacy Policy", "Terms of Service"].map((item, i) => (
+              {["Methodology", "Case Studies", "GymElite Enterprise", "Blog", "Privacy Policy", "Terms of Service"].map((item, i) => (
                 <li key={i}>
                   <a className="text-slate-400 hover:text-blue-500 transition-colors text-sm flex items-center group" 
-                     href={item === "Methodology" ? "#process" : item === "Case Studies" ? "#portfolio" : item === "GymElite Enterprise" ? "https://gymelite.in" : "#"}>
+                     href={item === "Methodology" ? "#process" : item === "Case Studies" ? "#portfolio" : item === "GymElite Enterprise" ? "https://gymelite.in" : item === "Blog" ? "/blog" : "#"}>
                     <MdFiberManualRecord className="text-[6px] mr-2 opacity-0 group-hover:opacity-100 transition-all" />
                     {item}
                   </a>

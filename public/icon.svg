@@ -6,6 +6,6 @@
   </defs>
   <g clip-path="url(#roundedView)">
     <rect width="32" height="32" fill="white" />
-    <image href="/logo1.png" width="32" height="32" />
+    <image href="/logo1.png" x="0" y="8" width="32" height="16" />
   </g>
 </svg>

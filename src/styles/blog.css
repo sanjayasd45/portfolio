@@ -1,0 +1,197 @@
+/* Blog Listing Page Styles */
+.blog-gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog-details-bg {
+  background-color: #030712;
+  position: relative;
+}
+
+.blog-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black 60%, transparent 100%);
+}
+
+/* Blog Content Proselike Render Styles */
+.blog-content {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.blog-content h1, 
+.blog-content h2, 
+.blog-content h3, 
+.blog-content h4 {
+  color: #ffffff;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;
+  border-left: 4px solid #6366f1;
+  padding-left: 1rem;
+  padding-bottom: 0.1rem;
+}
+
+.blog-content h3 {
+  font-size: 1.45rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-content strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.blog-content a {
+  color: #60a5fa;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.blog-content a:hover {
+  color: #3b82f6;
+}
+
+/* Tables Styling */
+.blog-content-table-wrapper {
+  overflow-x: auto;
+  margin: 2.5rem 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(13, 13, 24, 0.25);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.blog-content-table th {
+  padding: 16px 20px;
+  background-color: rgba(99, 102, 241, 0.08);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.blog-content-table td {
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blog-content-table tbody tr:hover {
+  background-color: rgba(99, 102, 241, 0.04);
+}
+
+/* Images Styling */
+.blog-content img {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 2.5rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* BLUF highlight styles */
+.blog-bluf-card {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: rgba(99, 102, 241, 0.03);
+  border-left: 4px solid #6366f1;
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Q&A layout card */
+.blog-qa-card {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: rgba(99, 102, 241, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-left: 4px solid #6366f1;
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Pull Quotes */
+.blog-pullquote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: rgba(236, 72, 153, 0.03);
+  border-left: 4px solid #ec4899;
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+}
+
+/* Lists styling */
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquote Styling */
+.blog-content blockquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid #3b82f6; /* Blue accent border to match portfolio */
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.blog-content blockquote h1,
+.blog-content blockquote h2,
+.blog-content blockquote h3,
+.blog-content blockquote h4,
+.blog-content blockquote h5,
+.blog-content blockquote h6 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  color: #3b82f6 !important; /* Accent color for headers inside blockquotes */
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  letter-spacing: 0.02em;
+}
+
+.blog-content blockquote p {
+  margin: 0 !important;
+  color: #cbd5e1 !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  font-style: italic;
+}
+
