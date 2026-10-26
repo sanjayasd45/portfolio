@@ -2,6 +2,7 @@
 
 import { MdArrowForward, MdVerifiedUser, MdLock, MdSpeed, MdSecurity } from "react-icons/md";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const InteractiveTechBg = dynamic(
   () => import("@/components/InteractiveTechBg"),
@@ -10,9 +11,9 @@ const InteractiveTechBg = dynamic(
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden bg-slate-900">
+    <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden bg-slate-50 dark:bg-slate-900 transition-colors duration-200">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-900/80 z-10"></div>
+        <div className="absolute inset-0 bg-slate-50/80 dark:bg-slate-900/80 z-10 transition-colors duration-200"></div>
         <InteractiveTechBg />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent z-10"></div>
       </div>
@@ -20,55 +21,55 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 w-full py-12 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* ── Left column — lead-gen copy ── */}
+          {/* ── Left column — lead-gen copy (Badge pill removed) ── */}
           <div className="text-left animate-hero-in">
 
             {/* Problem-led headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-              Your Business Deserves a Website That{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-400">
-                Actually Converts.
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 dark:text-white mb-6 leading-[1.1]">
+              Your Business Deserves Web Apps That{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 dark:from-blue-500 dark:via-blue-400 dark:to-indigo-400">
+                Actually Convert.
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-400 max-w-xl mb-4 leading-relaxed font-light">
-              Hi, I&apos;m Sanjay — a full-stack developer based in India. I build fast, custom websites and booking systems that are engineered to rank, load instantly, and turn visitors into paying clients.
+            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-xl mb-4 leading-relaxed font-light">
+              We design and engineer high-performance custom websites, SaaS platforms, and digital systems built to rank on Google, load instantly, and turn traffic into revenue.
             </p>
 
             {/* Proof line */}
-            <p className="text-sm text-slate-500 mb-10 font-medium">
-              ✓ Fixed price quotes &nbsp;·&nbsp; ✓ 1–2 week delivery &nbsp;·&nbsp; ✓ Reply within 1 hour
+            <p className="text-sm text-slate-500 dark:text-slate-500 mb-10 font-medium">
+              ✓ Fixed-price scopes &nbsp;·&nbsp; ✓ Rapid sprint turnaround &nbsp;·&nbsp; ✓ Guaranteed sub-1hr response
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-blue-500 hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5"
-                href="#contact"
+                href="/#contact"
               >
-                Get My Free Quote
+                Get Agency Proposal
                 <MdArrowForward className="ml-2 text-xl" aria-hidden="true" />
-              </a>
-              <a
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-slate-300 border border-white/10 hover:bg-white/5 hover:text-white transition-all"
-                href="#portfolio"
+              </Link>
+              <Link
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-950 dark:hover:text-white transition-all shadow-sm"
+                href="/#portfolio"
               >
-                See My Work
-              </a>
+                Explore Our Work
+              </Link>
             </div>
 
             {/* Micro trust signals */}
-            <div className="mt-12 flex flex-wrap items-center gap-6 text-slate-500 text-xs font-semibold uppercase tracking-widest">
+            <div className="mt-12 flex flex-wrap items-center gap-6 text-slate-600 dark:text-slate-500 text-xs font-semibold uppercase tracking-widest">
               <div className="flex items-center gap-2">
-                <MdVerifiedUser className="text-green-500 text-lg" aria-hidden="true" />
-                Fixed-Price Contracts
+                <MdVerifiedUser className="text-emerald-500 text-lg" aria-hidden="true" />
+                Fixed-Price SOW
               </div>
               <div className="flex items-center gap-2">
                 <MdLock className="text-blue-500 text-lg" aria-hidden="true" />
-                NDA Available
+                NDA Protected
               </div>
               <div className="flex items-center gap-2">
                 <MdSpeed className="text-purple-500 text-lg" aria-hidden="true" />
-                100 Lighthouse Score
+                100 Lighthouse Performance
               </div>
             </div>
           </div>
@@ -79,19 +80,19 @@ export default function Hero() {
 
             {/* Status Card with bar chart */}
             <div className="absolute right-0 top-10 w-80 glass-panel rounded-2xl p-6 transform rotate-6 hover:rotate-0 transition-transform duration-500 z-10 shadow-2xl">
-              <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-4">
-                <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">Status: Deployed</span>
+              <div className="flex justify-between items-center mb-4 border-b border-slate-200 dark:border-white/10 pb-4">
+                <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-widest">Status: Deployed</span>
                 <div className="flex gap-1">
                   <div className="w-2 h-2 rounded-full bg-red-500"></div>
                   <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
                   <div className="w-2 h-2 rounded-full bg-green-500"></div>
                 </div>
               </div>
-              <div className="space-y-3 font-mono text-xs text-slate-300">
-                <div className="flex justify-between"><span className="text-blue-400">Total Users</span> <span>142,893</span></div>
-                <div className="flex justify-between"><span className="text-green-400">Active Sessions</span> <span>8,234</span></div>
-                <div className="flex justify-between"><span className="text-purple-400">Server Load</span> <span>24%</span></div>
-                <div className="mt-4 h-32 bg-slate-800/50 rounded-lg flex items-end justify-between px-2 pb-2 gap-1">
+              <div className="space-y-3 font-mono text-xs text-slate-700 dark:text-slate-300">
+                <div className="flex justify-between"><span className="text-blue-600 dark:text-blue-400">Total Users</span> <span>142,893</span></div>
+                <div className="flex justify-between"><span className="text-emerald-600 dark:text-green-400">Active Sessions</span> <span>8,234</span></div>
+                <div className="flex justify-between"><span className="text-purple-600 dark:text-purple-400">Server Load</span> <span>24%</span></div>
+                <div className="mt-4 h-32 bg-slate-200/80 dark:bg-slate-800/50 rounded-lg flex items-end justify-between px-2 pb-2 gap-1">
                   <div className="w-full bg-blue-500/30 rounded-sm animate-bar" style={{ height: '40%', animationDelay: '0ms' }}></div>
                   <div className="w-full bg-blue-500/40 rounded-sm animate-bar" style={{ height: '60%', animationDelay: '100ms' }}></div>
                   <div className="w-full bg-blue-500/50 rounded-sm animate-bar" style={{ height: '30%', animationDelay: '200ms' }}></div>
@@ -103,27 +104,27 @@ export default function Hero() {
             </div>
 
             {/* Security Audit Card */}
-            <div className="absolute left-10 top-40 w-72 glass-panel rounded-2xl p-5 transform -rotate-3 hover:rotate-0 transition-transform duration-500 z-20 shadow-xl border-l-4 border-l-green-500">
+            <div className="absolute left-10 top-40 w-72 glass-panel rounded-2xl p-5 transform -rotate-3 hover:rotate-0 transition-transform duration-500 z-20 shadow-xl border-l-4 border-l-emerald-500">
               <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded bg-green-500/10 text-green-400">
+                <div className="p-2 rounded bg-emerald-500/10 text-emerald-600 dark:text-green-400">
                   <MdSecurity className="text-xl" aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white">Security Audit</div>
-                  <div className="text-xs text-slate-400">Passed Successfully</div>
+                  <div className="text-sm font-bold text-slate-900 dark:text-white">Security Audit</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Passed Successfully</div>
                 </div>
               </div>
-              <div className="w-full bg-slate-700/50 rounded-full h-1.5 mb-2">
-                <div className="bg-green-500 h-1.5 rounded-full w-full"></div>
+              <div className="w-full bg-slate-200 dark:bg-slate-700/50 rounded-full h-1.5 mb-2">
+                <div className="bg-emerald-500 h-1.5 rounded-full w-full"></div>
               </div>
             </div>
 
             {/* Tech Badge */}
             <div className="absolute right-20 bottom-20 w-64 glass-panel rounded-2xl p-4 transform rotate-2 hover:rotate-0 transition-transform duration-500 z-30 flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-bold border border-white/20 uppercase">JS</div>
+              <div className="w-10 h-10 rounded-full bg-slate-900 text-white dark:bg-white/10 dark:text-white flex items-center justify-center font-bold border border-slate-300 dark:border-white/20 uppercase text-xs">JS</div>
               <div>
-                <div className="text-xs font-bold text-white">Latest Tech Stack</div>
-                <div className="text-[10px] text-slate-400 font-mono">Next.js 16 + Node + MongoDB</div>
+                <div className="text-xs font-bold text-slate-900 dark:text-white">Latest Tech Stack</div>
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">Next.js 16 + Node + MongoDB</div>
               </div>
             </div>
           </div>

@@ -36,19 +36,19 @@ export default function BlogCard({ post }) {
     : 'Recent';
 
   return (
-    <article className="group relative flex flex-col bg-slate-900/50 border border-white/5 transition-all duration-300 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/5 rounded-2xl md:rounded-[1.75rem] overflow-hidden h-full">
+    <article className="group relative flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 transition-all duration-300 hover:border-blue-500/30 hover:shadow-xl dark:hover:shadow-2xl hover:shadow-blue-500/5 rounded-2xl md:rounded-[1.75rem] overflow-hidden h-full shadow-md dark:shadow-none">
       <Link href={`/blog/${slug}`} className="absolute inset-0 z-10">
         <span className="sr-only">Read {title}</span>
       </Link>
 
       {/* Image Container */}
-      <div className="relative h-44 sm:h-52 w-full overflow-hidden bg-slate-950/40">
+      <div className="relative h-44 sm:h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-950/40">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-80 group-hover:opacity-100"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-90 dark:opacity-80 group-hover:opacity-100"
         />
         <div className="absolute top-4 left-4 z-20">
           <span className={`px-3 py-1 border rounded-lg text-[9px] font-black uppercase tracking-widest ${getCategoryStyles(category)}`}>
@@ -60,29 +60,29 @@ export default function BlogCard({ post }) {
       {/* Content Container */}
       <div className="p-5 sm:p-6 flex flex-col flex-1">
         <div className="flex items-center gap-2 mb-2.5">
-          <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">
+          <span className="text-[9px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest">
             {readTime} &bull; {date}
           </span>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight tracking-tight mb-2.5 group-hover:text-blue-400 transition-colors">
+        <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-2.5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {title}
         </h3>
 
-        <p className="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3 font-medium mb-4">
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 font-medium mb-4">
           {summary}
         </p>
 
-        <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+        <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-white/5 mt-auto">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-slate-800 border border-white/5 flex items-center justify-center text-[10px] font-black text-white uppercase">
+            <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-white/5 flex items-center justify-center text-[10px] font-black text-slate-800 dark:text-white uppercase">
               {(post.author?.name || post.author?.gymName || 'DC').substring(0, 2)}
             </div>
-            <span className="text-[10px] font-black text-slate-400 uppercase tracking-tight truncate max-w-[120px]">
+            <span className="text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-tight truncate max-w-[120px]">
               {post.author?.name || post.author?.gymName || 'Developer Chowk'}
             </span>
           </div>
-          <div className="text-blue-500 font-black text-lg transition-transform group-hover:translate-x-1">→</div>
+          <div className="text-blue-600 dark:text-blue-500 font-black text-lg transition-transform group-hover:translate-x-1">→</div>
         </div>
       </div>
     </article>

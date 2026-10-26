@@ -4,7 +4,7 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    qualities: [75, 85],
+    qualities: [75, 85, 90, 95],
     remotePatterns: [
       {
         protocol: 'https',
@@ -44,6 +44,7 @@ const nextConfig = {
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'X-XSS-Protection', value: '1; mode=block' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
       },
     ];

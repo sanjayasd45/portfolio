@@ -5,7 +5,7 @@ import { getPublicPosts } from "@/utils/api";
 
 export const metadata = {
   title: "Insights & Coding Blueprints | Developer Chowk Blog",
-  description: "Read the latest engineering articles, SaaS blueprints, and web development case studies from Sanjay at Developer Chowk.",
+  description: "Read the latest engineering articles, SaaS blueprints, and web development case studies from the engineering team at Developer Chowk agency.",
 };
 
 export default async function BlogPage() {
@@ -22,7 +22,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="bg-[#07070a] font-[family-name:var(--font-plus-jakarta-sans)] min-h-screen text-slate-100 antialiased overflow-x-hidden">
+    <div className="bg-slate-50 dark:bg-[#07070a] font-[family-name:var(--font-plus-jakarta-sans)] min-h-screen text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden transition-colors duration-200">
       <Navbar />
       <main>
         <BlogListing posts={posts} />

@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useSyncExternalStore } from 'react';
+
+const subscribe = (callback) => {
+  window.addEventListener('resize', callback);
+  return () => window.removeEventListener('resize', callback);
+};
+const getSnapshot = () => typeof window !== 'undefined' && window.innerWidth >= 1024;
+const getServerSnapshot = () => false;
 
 export default function InteractiveTechBg() {
   const canvasRef = useRef(null);
-  // Don't render on mobile — canvas animation is expensive on slow CPUs
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    // Only run on desktop (lg breakpoint = 1024px)
-    if (window.innerWidth < 1024) return;
-    setShow(true);
-  }, []);
+  const show = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
     if (!show) return;

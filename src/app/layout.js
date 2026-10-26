@@ -15,25 +15,25 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata = {
   metadataBase: new URL("https://developerchowk.com"),
   title: {
-    default: "Developer Chowk | Expert Web Development & Software Services",
+    default: "Developer Chowk | Full-Service Web Development & Digital Agency",
     template: "%s | Developer Chowk",
   },
   description:
-    "I build fast, scalable, and SEO-friendly websites, SaaS platforms, and custom software for startups and businesses across India. MERN stack specialist delivering results in 1–2 weeks.",
+    "We build fast, scalable, and conversion-engineered websites, SaaS platforms, and custom software for startups and scaling businesses. Full-cycle agency delivery in rapid 1–2 week sprints.",
   keywords: [
-    "Web Development India",
-    "Best Web Developer India",
-    "MERN Stack Developer India",
-    "Custom Website Design India",
-    "SaaS Development Services",
-    "E-commerce Website Builder India",
-    "Software Development Company India",
-    "Next.js Developer India",
-    "Full Stack Developer India",
+    "Web Development Agency India",
+    "Full-Service Web Agency",
+    "Custom Software Development Agency",
+    "MERN Stack Agency India",
+    "Next.js Development Agency",
+    "SaaS Development Company",
+    "E-commerce Website Builder",
+    "Enterprise Web Applications",
     "Business Website Development India",
+    "UI UX Design & Development Agency",
   ],
-  authors: [{ name: "Sanjay", url: "https://github.com/sanjayasd45" }],
-  creator: "Sanjay (Developer Chowk)",
+  authors: [{ name: "Developer Chowk Agency", url: "https://developerchowk.com" }],
+  creator: "Developer Chowk Agency",
   publisher: "Developer Chowk",
   formatDetection: {
     email: false,
@@ -45,35 +45,35 @@ export const metadata = {
     locale: "en_IN",
     url: "https://developerchowk.com",
     siteName: "Developer Chowk",
-    title: "Developer Chowk | Expert Web Development & Software Services",
+    title: "Developer Chowk | Full-Service Web Development & Digital Agency",
     description:
-      "Fast, scalable, and SEO-friendly websites, SaaS platforms, and custom software for startups and businesses across India.",
+      "Full-cycle web development agency delivering high-speed websites, SaaS platforms, and custom software for ambitious businesses.",
     images: [
       {
         url: "/logo1.png",
         width: 1200,
         height: 630,
-        alt: "Developer Chowk - Web Development Services in Lucknow",
+        alt: "Developer Chowk - Web Development Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Developer Chowk | Expert Web Development & Software Services",
+    title: "Developer Chowk | Full-Service Web Development & Digital Agency",
     description:
-      "Fast, scalable websites, SaaS platforms, and custom software for businesses across India.",
+      "Fast, scalable web applications, SaaS platforms, and enterprise software engineered for business growth.",
     images: ["/logo1.png"],
     creator: "@thedeveloperchowk",
   },
   icons: {
     icon: [
-      { url: "/logo1.png", sizes: "48x48", type: "image/png" },
-      { url: "/logo1.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/logo1.png", sizes: "180x180", type: "image/png" },
+      { url: "/icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/logo1.png",
+    shortcut: "/icon.png",
   },
   alternates: {
     canonical: "https://developerchowk.com",
@@ -92,14 +92,17 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#020617",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -107,11 +110,13 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
       </head>
       <body
-        className={`${plusJakartaSans.variable} font-display antialiased bg-slate-950 text-slate-100`}
+        className={`${plusJakartaSans.variable} font-display antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200`}
+        suppressHydrationWarning
       >
-        <JsonLd />
-        {children}
-        <ClientProviders gaId="G-YWWSE3Z213" />
+        <ClientProviders gaId="G-YWWSE3Z213">
+          <JsonLd />
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );

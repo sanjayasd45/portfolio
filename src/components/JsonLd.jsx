@@ -6,7 +6,7 @@ export default function JsonLd() {
     "url": "https://developerchowk.com",
     "logo": "https://developerchowk.com/logo1.png",
     "image": "https://developerchowk.com/logo1.png",
-    "description": "Developer Chowk builds expert MERN stack web applications, custom business software, SaaS platforms, and booking systems for startups and businesses across India.",
+    "description": "Developer Chowk is a full-service web development and software engineering agency building fast, scalable web applications, SaaS platforms, and digital systems for startups and enterprises.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "India",
@@ -22,7 +22,7 @@ export default function JsonLd() {
       "@type": "Person",
       "name": "Sanjay",
       "url": "https://github.com/sanjayasd45",
-      "jobTitle": "Full-Stack Web Developer"
+      "jobTitle": "Founder & Technical Director"
     },
     "priceRange": "$$",
     "openingHours": "Mo-Sa 09:00-21:00",
@@ -32,11 +32,12 @@ export default function JsonLd() {
       "https://www.instagram.com/thedeveloperchowk"
     ],
     "knowsAbout": [
-      "Web Development Lucknow",
+      "Web Development Agency",
+      "Full-Stack Web Engineering",
       "MERN Stack Development",
       "Custom Software Engineering",
       "Booking System Development",
-      "SaaS Product Design",
+      "SaaS Product Architecture",
       "API & Microservices Architecture",
       "Next.js SEO Optimization",
       "E-commerce Solutions"

@@ -32,23 +32,23 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section className="py-16 md:py-24 relative bg-slate-900" id="portfolio">
+    <section className="py-16 md:py-24 relative bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-white/5 transition-colors duration-200" id="portfolio">
       <SectionGridBg />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center mb-16">
-          <p className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase mb-3">Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Recent Client Work</h2>
+          <p className="text-sm font-bold tracking-[0.2em] text-blue-600 dark:text-blue-500 uppercase mb-3">Case Studies</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white mb-6">Featured Projects</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group relative flex flex-col bg-slate-900/40 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all duration-500 overflow-hidden shadow-xl hover:-translate-y-2"
+              className="group relative flex flex-col bg-white dark:bg-slate-900/40 rounded-2xl border border-slate-200 dark:border-white/5 hover:border-blue-500/30 transition-all duration-500 overflow-hidden shadow-lg dark:shadow-xl hover:-translate-y-2"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="aspect-[16/10] w-full relative overflow-hidden">
+              <div className="aspect-[16/10] w-full relative overflow-hidden bg-slate-100 dark:bg-slate-950">
                 <Image
                   src={project.img}
                   alt={project.title}
@@ -57,7 +57,7 @@ export default function Portfolio() {
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 bg-slate-900/10 dark:bg-slate-950/30 group-hover:bg-transparent transition-colors duration-500" />
 
                 <div className="absolute top-3 right-3 z-20 flex gap-2">
                   {project.repo && (
@@ -65,44 +65,55 @@ export default function Portfolio() {
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="size-8 rounded-lg bg-slate-900/80 backdrop-blur-md text-white border border-white/10 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500 transition-all duration-300"
+                      className="size-8 rounded-lg bg-white/90 dark:bg-slate-900/80 backdrop-blur-md text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:border-blue-500 transition-all duration-300 shadow-sm"
                       aria-label={`View ${project.title} on GitHub`}
                     >
                       <FaGithub className="text-lg" aria-hidden="true" />
                     </a>
                   )}
-                  <a
-                    href={project.link}
-                    className="size-8 rounded-lg bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all duration-300"
-                    aria-label={`View live demo of ${project.title}`}
-                  >
-                    <MdArrowOutward className="text-lg" aria-hidden="true" />
-                  </a>
+                  {project.link && project.link !== "#" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="size-8 rounded-lg bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 hover:bg-blue-600 hover:scale-105 transition-all duration-300"
+                      aria-label={`View live demo of ${project.title}`}
+                    >
+                      <MdArrowOutward className="text-lg" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <span 
+                      className="px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md text-[10px] font-mono font-medium text-slate-200 border border-white/10 uppercase tracking-wider shadow-sm"
+                      title="Enterprise deployment"
+                    >
+                      Enterprise
+                    </span>
+                  )}
                 </div>
               </div>
 
               <div className="p-5 flex flex-col flex-1 relative z-10">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-blue-500 bg-blue-500/10 px-2 py-0.5 rounded">
+                  <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">
                     {project.category}
                   </span>
                   <div className="flex gap-1 overflow-hidden">
                     {project.tech.map((t, i) => (
-                      <span key={i} className="text-[8px] font-mono text-slate-500 uppercase truncate">{t}{i < project.tech.length - 1 && " •"}</span>
+                      <span key={i} className="text-[8px] font-mono text-slate-500 dark:text-slate-500 uppercase truncate">{t}{i < project.tech.length - 1 && " •"}</span>
                     ))}
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-500 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-400 text-xs leading-relaxed mb-4 line-clamp-2">
+                <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-4 line-clamp-2">
                   {project.desc}
                 </p>
 
-                <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center">
-                  <span className="text-[8px] font-mono text-slate-600 uppercase tracking-widest">Active System</span>
+                <div className="mt-auto pt-4 border-t border-slate-200 dark:border-white/5 flex justify-between items-center">
+                  <span className="text-[8px] font-mono text-slate-500 dark:text-slate-600 uppercase tracking-widest">Active System</span>
                   <div className="flex gap-1">
                     <div className="size-1 rounded-full bg-blue-500" />
                   </div>
